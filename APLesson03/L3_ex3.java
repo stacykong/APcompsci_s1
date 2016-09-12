@@ -11,7 +11,7 @@ public class L3_ex3
 		int v = calc.nextInt();
 		System.out.println("Pick a number for the force.");
 		int f = calc.nextInt();
-		int m = (f * r) / (v * v);
+		float m = (f * r) / (v * v);
 		System.out.println("The mass is " + m + ".");
 	}
 }
