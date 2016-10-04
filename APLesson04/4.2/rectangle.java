@@ -16,7 +16,7 @@ public class rectangle
 		System.out.println("Please enter the rectangle width:");
 		w = kb.nextInt();
 		
-		int peri = calcPerim(l, w);
+		double peri = calcPerim(l, w);
 		print(peri);
 	}
 	
@@ -25,8 +25,8 @@ public class rectangle
 		return length*width;
 	}
 	
-	public static void print(int peri)
+	public static void print(double peri)
 	{
-		System.out.println(s + peri + ss);
+		System.out.printf(s + "%.5f" + ss, peri);
 	}
 }

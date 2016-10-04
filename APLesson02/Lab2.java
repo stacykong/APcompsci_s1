@@ -14,8 +14,9 @@ public class Lab2
 		String address = "jnsdfasdf";
 		String city1 = "San";
 		String city2 = "Diego";
+		String st = "CA";
 		int zip = 2389575;
-		System.out.println(name + "\n" + number + " " + address + "\n" + city1 + " " + city2 + "\n" + zip);
+		System.out.println(name + "\n" + number + " " + address + "\n" + city1 + " " + city2 + ", " + st + " " + zip);
 		
 		System.out.println(" ");
 		
