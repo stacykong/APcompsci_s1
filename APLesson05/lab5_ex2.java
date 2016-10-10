@@ -28,11 +28,7 @@ public class lab5_ex2
 		double p4 = kb.nextInt();
 	
 		double sub = p1 + p2 + p3 + p4;
-		double dis = 0;
-		if (discount(sub))
-			dis = sub * .15;
-		if (!discount(sub))
-			dis = 0;
+		double dis = discount(sub);
 		double tax = sub * .08;
 		double total = sub - dis + tax;
 		
@@ -48,9 +44,14 @@ public class lab5_ex2
 		System.out.println("_______________________________\n           Thank you!");
 	}
 	
-	public static boolean discount(double sub)
+	public static double discount(double sub)
 	{
-		return sub >=2000;
+		boolean disc = sub >=2000;
+		if(disc)
+			return sub*.15;
+		if(!disc)
+			return 0;
+		return 0;
 	}
 	
 	public void format(String i, double p)

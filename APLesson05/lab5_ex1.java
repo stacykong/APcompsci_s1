@@ -1,30 +1,24 @@
-//import java.util.Random;
-
 public class lab5_ex1
 {
 	
 	public static void main(String[]args)
 	{
-		//Random rand = new Random();
-		
-		int proll = (int)((Math.random()*6) + 1);
-		int croll = (int)((Math.random()*6) + 1);
+		int proll = (int)((Math.random()*7) + 1);
+		int croll = (int)((Math.random()*7) + 1);
+		String win = rollDice(proll, croll);
 		
 		System.out.println("You rolled a " + proll);
 		System.out.println("The computer rolled a " + croll);
-		
-		if (rollDice(proll, croll))
-		{
-			System.out.println("The winner is you!");
-		}
-		if (!rollDice(proll, croll))
-		{
-			System.out.println("The winner is the computer!");
-		}
+		System.out.println("The winner is " + win);
 	}
 	
-	public static boolean rollDice(int proll, int croll)
+	public static String rollDice(int proll, int croll)
 	{
-		return proll > croll;
+		boolean roll = proll > croll;
+		if(roll)
+			return "you!";
+		if(!roll)
+			return "the computer!";
+		return "you!";
 	}
 }
