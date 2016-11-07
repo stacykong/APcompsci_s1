@@ -2,23 +2,45 @@ import java.util.Scanner;
 
 public class quiz
 {
-	
-	static int num1 = 5;
-	static int num2 = 7;
-	static int num3 = 9;
-	
 	public static void main(String[]args)
 	{
-		numPrint(num1, num2, num3);
+		Scanner kb = new Scanner(System.in);
+		System.out.println("PLease enter the first element");
+		String e1 = kb.next();
+		System.out.println("Enter electronegativity");
+		double elec1 = kb.nextDouble();
+		System.out.println("PLease enter the second element");
+		String e2 = kb.next();
+		System.out.println("Enter electronegativity");
+		double elec2 = kb.nextDouble();
+		
+		String bond = calcBond(elec1, elec2);
+		System.out.println("bond between " + e1 + " and " + e2 + " is " + bond);
+		
+		boolean a = true;
+		boolean b = false;
+		boolean c = false;
+		System.out.println("!a && !(b && !c)" + (!a && !(b && !c)));
+		System.out.println("!a || !b || !c" + (!a || !b || !c));
+		System.out.println("!(a || b || c)" + (!(a || b || c)));
+		System.out.println("!(a && b && c)" + (!(a && b && c)));
+		System.out.println("!a || !(b || !c)" + (!a || !(b || !c)));
 	}
-	public static int calcAvg(int one, int two, int three)
+	public static String calcBond(double one, double two)
 	{
-		return (one + two + three)/3;
-	}
-	
-	public static void numPrint(int one, int two, int three)
-	{
-		double avg = calcAvg(one, two, three);
-		System.out.println("The avg of " + one + two + three +"is" +avg);
+		if(one >= two)
+		{
+			if(one-two>=1.7)
+				return "ionic";
+			else
+				return "covalent";
+		}
+		else
+		{
+			if(two-one>=1.7)
+				return "ionic";
+			else
+				return "covalent";
+		}
 	}
 }
