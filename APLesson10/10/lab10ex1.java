@@ -29,7 +29,7 @@ public class lab10ex1
 			{
 				if(i == 0)
 				{
-						nums.remove(i);
+					nums.remove(i);
 				}
 				else
 				{

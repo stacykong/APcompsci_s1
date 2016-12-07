@@ -20,43 +20,33 @@ public class lab10ex2
 		int i = 0;
 		while(i < eq.size())
 		{
-			if(i < eq.size() && (eq.get(i).equals("*") || eq.get(i).equals("/")))
+			if((eq.get(i).equals("*") || eq.get(i).equals("/")))
 			{
 				if(eq.get(i).equals("*"))
-				{
 					eq.set(i, "" + (Integer.parseInt(eq.get(i-1)) * Integer.parseInt(eq.get(i+1))));
-					eq.remove(i-1);
-					eq.remove(i);
-				}
 				else
-				{
 					eq.set(i, "" + (Integer.parseInt(eq.get(i-1)) / Integer.parseInt(eq.get(i+1))));
-					eq.remove(i-1);
-					eq.remove(i);
-				}
+				eq.remove(i-1);
+				eq.remove(i);
 			}
-			i++;
+			else
+				i++;
 		}
 		
 		i = 0;
 		while(i < eq.size())
 		{
-			if(i < eq.size() && (eq.get(i).equals("+") || eq.get(i).equals("-")))
+			if((eq.get(i).equals("+") || eq.get(i).equals("-")))
 			{
 				if(eq.get(i).equals("+"))
-				{
-				eq.set(i, "" + (Integer.parseInt(eq.get(i-1)) + Integer.parseInt(eq.get(i+1))));
+					eq.set(i, "" + (Integer.parseInt(eq.get(i-1)) + Integer.parseInt(eq.get(i+1))));
+				else
+					eq.set(i, "" + (Integer.parseInt(eq.get(i-1)) - Integer.parseInt(eq.get(i+1))));
 				eq.remove(i-1);
 				eq.remove(i);
-				}
-				else
-				{
-					eq.set(i, "" + (Integer.parseInt(eq.get(i-1)) - Integer.parseInt(eq.get(i+1))));
-					eq.remove(i-1);
-					eq.remove(i);
-				}
 			}
-			i++;
+			else
+				i++;
 		}
 		return(eq);
 	}
