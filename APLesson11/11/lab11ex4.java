@@ -27,7 +27,9 @@ public class lab11ex4
 			for(int j = 0; j < nums[i].length; j++)
 			{
 				if(nums[i][j] % divisor == 0)
+				{
 					count++;
+				}
 			}
 		}
 		System.out.println("There are " + count + " numbers divisible by " + divisor + " in the array");
