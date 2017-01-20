@@ -42,6 +42,7 @@ public class lab11ex5
 		{
 			clip[shotCount-1] = "[]";
 			shotCount--;
+			System.out.println(bulletCount);
 			return "Boom!!";
 		}
 		else
