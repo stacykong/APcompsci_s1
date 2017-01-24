@@ -16,5 +16,17 @@ public class lab12ex4run
 		
 		System.out.println("My info:\nHair: " + human.getHair() + "\nEyes: " + human.getEyes() 
 			+ "\nSkin: " + human.getSkin());
+		
+		System.out.println("Please enter hair choice:");
+		String hair2 = kb.nextLine();
+		System.out.println("Please enter eyes choice:");
+		String eyes2 = kb.nextLine();
+		System.out.println("Please enter skin choice:");
+		String skin2 = kb.nextLine();
+		
+		human.setHES(hair, eyes, skin);
+		
+		System.out.println("Friend's info:\nHair: " + human.getHair() + "\nEyes: " + human.getEyes() 
+			+ "\nSkin: " + human.getSkin());
 	}
 }

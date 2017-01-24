@@ -20,8 +20,6 @@ public class lab12ex6
 		iman = im;
 		iname = in;
 		upc = (int)(Math.random()*1000000000);
-		icat = "N/A";
-		iprice = "N/A";
 	}
 	
 	public lab12ex6(String im, String in, String ic, double p)
