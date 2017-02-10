@@ -4,36 +4,41 @@ import java.util.Arrays;
 public class toystore
 {
 	private ArrayList<toy> toyList = new ArrayList<toy>();
+	private String ty;
+	
+	public static void main(String[]args)
+	{
+		System.out.println(1);
+	}
 	
 	public toystore()
 	{
-		
+		this.ty = "";
+		System.out.println(1);
 	}
 	
 	public toystore(String t)
 	{
-		this.t = "Hotwheel, Car, G.I. Joe, AF, PennyRacer, Car, Matchbox, Car, Star Wars, AF, Pullback, Car, Star Wars, AF";
-		System.out.println(t);
-		loadToys(t);
+		this.ty = "Hotwheel, Car, G.I. Joe, AF, PennyRacer, Car, Matchbox, Car, Star Wars, AF, Pullback, Car, Star Wars, AF";
+		loadToys(ty);
+		System.out.println(1);
 	}
 	
 	public void loadToys(String ts)
 	{
 		ArrayList<String> toys = new ArrayList<String>(Arrays.asList(ts.split(", ")));
-		System.out.println(toys);
-		
+		System.out.println(1);
 		for(int i = 0; i < toys.size(); i++)
 		{
 			String name = toys.get(i);
 			String type = toys.get(i+1);
-			toy t = new car(getThatToy(name).toString());
+			toy t = new car(getThatToy(name).toString());//new toy object???abstract
 			
 			if(getThatToy(name).equals(""))
 			{
 				if(type.equals("Car"))
 				{
 					toyList.add(new car(name));
-					System.out.println(1);
 				}
 				else
 					toyList.add(new afigure(name));
@@ -41,7 +46,6 @@ public class toystore
 			else
 			{
 				t.setCount(t.getCount() + 1);
-				System.out.println(t.getCount());
 			}
 		}
 	}
@@ -56,13 +60,6 @@ public class toystore
 				return "";
 		}
 		return "";
-	}
-	
-	public static void main(String[]args)
-	{
-		toystore g = new toystore();
-		System.out.println(g.getMostFrequentToy());
-		System.out.println(g.getMostFrequentType());
 	}
 	
 	public String getMostFrequentToy()
@@ -92,14 +89,14 @@ public class toystore
 			if(t.getType().equals("Action Figure"))
 				figures++;
 		}
-		
+		System.out.println(1);
 		if(cars > figures)
 			return "Cars";
 		else if(figures < cars)
 			return "Action Figures";
 		else
 		{
-			System.out.println(cars + figures);
+			//System.out.println(cars + figures);
 			return "Equals amounts of action figures and cars!";
 		}
 	}
