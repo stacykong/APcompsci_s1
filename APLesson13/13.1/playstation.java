@@ -20,7 +20,7 @@ public class playstation extends console
 	
 	public int getserial()
 	{
-		return serialNo;
+		return super.getserial();
 	}
 	
 	public String getController()
@@ -31,7 +31,7 @@ public class playstation extends console
 	public String toString()
 	{
 		return "Platform: " + getplatform() +
-				"\nSerial #: " + super.getserial() +
-				"\nController: " + getController() + "\n";
+				"\nSerial #: " + getserial() +
+				"\nController: " + getController();
 	}
 }

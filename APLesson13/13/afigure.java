@@ -5,14 +5,12 @@ public class afigure extends toy
 	
 	public afigure()
 	{
-		super();
 		this.name = "";
 		this.count = 1;
 	}
 	
 	public afigure(String n)
 	{
-		super();
 		this.name = n;
 		this.count = 1;
 	}

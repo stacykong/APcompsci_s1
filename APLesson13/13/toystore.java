@@ -4,35 +4,27 @@ import java.util.Arrays;
 public class toystore
 {
 	private ArrayList<toy> toyList = new ArrayList<toy>();
-	private String ty;
-	
-	public static void main(String[]args)
-	{
-		System.out.println(1);
-	}
 	
 	public toystore()
 	{
-		this.ty = "";
-		System.out.println(1);
+		
 	}
 	
 	public toystore(String t)
 	{
-		this.ty = "Hotwheel, Car, G.I. Joe, AF, PennyRacer, Car, Matchbox, Car, Star Wars, AF, Pullback, Car, Star Wars, AF";
-		loadToys(ty);
-		System.out.println(1);
+		t = "Hotwheel, Car, G.I. Joe, AF, PennyRacer, Car, Matchbox, Car, Star Wars, AF, Pullback, Car, Star Wars, AF";
+		loadToys(t);
 	}
 	
-	public void loadToys(String ts)
+	public ArrayList loadToys(String ts)
 	{
 		ArrayList<String> toys = new ArrayList<String>(Arrays.asList(ts.split(", ")));
-		System.out.println(1);
-		for(int i = 0; i < toys.size(); i++)
+		ArrayList<String> test = new ArrayList<String>();
+		for(int i = 0; i < toys.size()-1; i+=2)
 		{
 			String name = toys.get(i);
 			String type = toys.get(i+1);
-			toy t = new car(getThatToy(name).toString());//new toy object???abstract
+			test.add(name);
 			
 			if(getThatToy(name).equals(""))
 			{
@@ -45,21 +37,35 @@ public class toystore
 			}
 			else
 			{
-				t.setCount(t.getCount() + 1);
+				//t.setCount(t.getCount() + 1);
+				for(int j = 0; j < toyList.size(); j++)
+				{
+					if(toyList.get(j).getName().equals("Star Wars"))
+					{
+						toyList.get(j).setCount(toyList.get(j).getCount() + 1);
+					}
+						
+				}
 			}
 		}
+		return test;
 	}
 	
-	public Object getThatToy(String nm)
+	public String getThatToy(String name)
 	{
+		String s = "";
 		for(toy t : toyList)
 		{
-			if(t.getName().equals(nm))
-				return t;
+			if(t.getName().equals(name))
+			{
+				s = "dfasfd";
+			}
 			else
-				return "";
+			{
+				s = "";
+			}
 		}
-		return "";
+		return s;
 	}
 	
 	public String getMostFrequentToy()
@@ -89,16 +95,13 @@ public class toystore
 			if(t.getType().equals("Action Figure"))
 				figures++;
 		}
-		System.out.println(1);
+		
 		if(cars > figures)
 			return "Cars";
 		else if(figures < cars)
 			return "Action Figures";
-		else
-		{
-			//System.out.println(cars + figures);
+		else 
 			return "Equals amounts of action figures and cars!";
-		}
 	}
 	
 	public String toString()
@@ -106,9 +109,12 @@ public class toystore
 		String toylist = "";
 		for(int i = 0; i < toyList.size(); i++)
 		{
-			toylist += toyList.get(i);
-			System.out.println(toylist);
+			toylist += toyList.get(i) + ", ";
 		}
 		return toylist;
+	}
+	public ArrayList test()
+	{
+		return toyList;
 	}
 }

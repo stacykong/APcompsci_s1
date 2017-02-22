@@ -5,14 +5,12 @@ public class car extends toy
 	
 	public car()
 	{
-		super();
 		this.name = "";
 		this.count = 1;
 	}
 	
 	public car(String n)
 	{
-		super();
 		this.name = n;
 		this.count = 1;
 	}

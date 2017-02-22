@@ -5,13 +5,12 @@ public class xbox extends console
 	
 	public xbox()
 	{
-		platform = "";
+		super();
 	}
 	
 	public xbox(String p)
 	{
-		platform = p;
-		serialNo = (int)(Math.random()*10000000);
+		super(p);
 	}
 	
 	public String getplatform()
@@ -21,7 +20,7 @@ public class xbox extends console
 	
 	public int getserial()
 	{
-		return serialNo;
+		return super.getserial();
 	}
 	
 	public String getController()
@@ -32,7 +31,7 @@ public class xbox extends console
 	public String toString()
 	{
 		return "Platform: " + getplatform() +
-				"\nSerial #: " + super.getserial() +
-				"\nController: " + getController() + "\n";
+				"\nSerial #: " + getserial() +
+				"\nController: " + getController();
 	}
 }

@@ -5,13 +5,12 @@ public abstract class console extends gamesystem
 	
 	public console()
 	{
-		this.platform = "";
+		super();
 	}
 	
 	public console(String p)
 	{
-		this.platform = p;
-		this.serialNo = (int)(Math.random()*10000000);
+		super(p);
 	}
 	
 	public String getplatform()
@@ -21,15 +20,15 @@ public abstract class console extends gamesystem
 	
 	public int getserial()
 	{
-		return serialNo;
+		return super.getserial();
 	}
 	
 	public abstract String getController();
 	
 	public String toString()
 	{
-		return "Platform: " + super.getplatform() +
-				"\nSerial #: " + super.getserial() +
-				"\nController: " + getController() + "\n";
+		return "Platform: " + getplatform() +
+				"\nSerial #: " + getserial() +
+				"\nController: " + getController();
 	}
 }

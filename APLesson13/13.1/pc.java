@@ -20,7 +20,7 @@ public class pc extends gamesystem
 	
 	public int getserial()
 	{
-		return serialNo;
+		return super.getserial();
 	}
 	
 	public String systemInput()
@@ -31,7 +31,7 @@ public class pc extends gamesystem
 	public String toString()
 	{
 		return "Platform: " + getplatform() +
-				"\nSerial #: " + super.getserial() +
-				"\nController: " + systemInput() + "\n";
+				"\nSerial #: " + getserial() +
+				"\nSystem Input: " + systemInput();
 	}
 }

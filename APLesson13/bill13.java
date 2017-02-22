@@ -16,6 +16,11 @@ public class bill13 extends lesson13
 		this.face = f;
 	}
 	
+	public double rv()
+	{
+		return value;
+	}
+	
 	public String scan()
 	{
 		return face;

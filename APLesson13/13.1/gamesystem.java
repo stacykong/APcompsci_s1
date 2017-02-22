@@ -5,13 +5,14 @@ public class gamesystem
 	
 	public gamesystem()
 	{
-		this.platform = "";
+		platform = "";
+		serialNo = (int)(Math.random()*10000000);
 	}
 	
 	public gamesystem(String p)
 	{
-		this.platform = p;
-		this.serialNo = (int)(Math.random()*10000000);
+		platform = p;
+		serialNo = (int)(Math.random()*10000000);
 	}
 	
 	public String getplatform()
