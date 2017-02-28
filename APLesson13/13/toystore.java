@@ -25,7 +25,7 @@ public class toystore
 			String type = toys.get(i+1);
 			toy t = getThatToy(name);
 			
-			if(getThatToy(name).equals(""))
+			if(getThatToy(name) == null)
 			{
 				if(type.equals("Car"))
 					toyList.add(new car(name));
@@ -35,19 +35,16 @@ public class toystore
 			else
 				t.setCount(t.getCount() + 1);
 		}
-		return test;
 	}
 	
-	public String getThatToy(String nm)
+	public toy getThatToy(String nm)
 	{
 		for(toy t : toyList)
 		{
-			if(t.getName().equals(name))
-			{
+			if(t.getName().equals(nm))
 				return t;
-			}
 		}
-		return "";
+		return null;
 	}
 	
 	public String getMostFrequentToy()
@@ -94,9 +91,5 @@ public class toystore
 			toylist += toyList.get(i) + ", ";
 		}
 		return toylist;
-	}
-	public ArrayList test()
-	{
-		return toyList;
 	}
 }
