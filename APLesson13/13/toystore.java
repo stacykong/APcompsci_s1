@@ -16,7 +16,7 @@ public class toystore
 		loadToys(t);
 	}
 	
-	public ArrayList loadToys(String ts)
+	public void loadToys(String ts)
 	{
 		ArrayList<String> toys = new ArrayList<String>(Arrays.asList(ts.split(", ")));
 		ArrayList<String> test = new ArrayList<String>();
@@ -24,9 +24,9 @@ public class toystore
 		{
 			String name = toys.get(i);
 			String type = toys.get(i+1);
-			test.add(name);
+			toy t = getThatToy(name);
 			
-			if(getThatToy(name).equals(""))
+			if(getThatToy(name) == null)
 			{
 				if(type.equals("Car"))
 				{
@@ -36,36 +36,18 @@ public class toystore
 					toyList.add(new afigure(name));
 			}
 			else
-			{
-				//t.setCount(t.getCount() + 1);
-				for(int j = 0; j < toyList.size(); j++)
-				{
-					if(toyList.get(j).getName().equals("Star Wars"))
-					{
-						toyList.get(j).setCount(toyList.get(j).getCount() + 1);
-					}
-						
-				}
-			}
+				t.setCount(t.getCount() + 1);
 		}
-		return test;
 	}
 	
-	public String getThatToy(String name)
+	public toy getThatToy(String name)
 	{
-		String s = "";
 		for(toy t : toyList)
 		{
 			if(t.getName().equals(name))
-			{
-				s = "dfasfd";
-			}
-			else
-			{
-				s = "";
-			}
+				return t;
 		}
-		return s;
+		return null;
 	}
 	
 	public String getMostFrequentToy()
@@ -112,9 +94,5 @@ public class toystore
 			toylist += toyList.get(i) + ", ";
 		}
 		return toylist;
-	}
-	public ArrayList test()
-	{
-		return toyList;
 	}
 }
