@@ -20,11 +20,6 @@ public class gmc extends car
 		return super.getid();
 	}
 	
-	public void move(double x, double y)
-	{
-		super.move(x, y);
-	}
-	
 	public double[] getloc()
 	{
 		double[] location = {lx, ly};

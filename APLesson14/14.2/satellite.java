@@ -6,12 +6,9 @@ public class satellite
 	{
 		ArrayList<location> locate = new ArrayList<>();
 		double[] honloc = {5, 6};
-		car h = new honda(honloc);
-		car t = new toyota("8, 9");
-		car g = new gmc(3, 8);
-		locate.add(h);
-		locate.add(t);
-		locate.add(g);
+		locate.add(new honda(honloc));
+		locate.add(new toyota("8, 9"));
+		locate.add(new gmc(3, 8));
 		
 		double[] home = {0, 0};
 		
@@ -29,7 +26,7 @@ public class satellite
 			double one = (double)(Math.random()*100);
 			double two = (double)(Math.random()*100);
 			
-			((car)l).move(one, two);
+			l.move(one, two);
 			
 			printout += "\nAfter " + l.getid() + " moved (" + one + ", " + two + ")" + 
 				"\nNew Location: (" + getlocation(l.getloc()) + ")";
