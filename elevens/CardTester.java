@@ -13,7 +13,10 @@ public class CardTester {
 		Card clubs10 = new Card("10", "clubs", 10);
 		
 		System.out.println(heartsqueen);
+		System.out.println(heartsqueen.matches(spadesace));
 		System.out.println(spadesace);
+		System.out.println(spadesace.matches(heartsqueen));
 		System.out.println(clubs10);
+		System.out.println(clubs10.matches(spadesace));
 	}
 }
