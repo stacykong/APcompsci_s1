@@ -76,7 +76,7 @@ public class Magpie2
 			response = "Why do you like me?";
 		}
 		
-		else
+		else if(findKeyword(statement, "me", 0) >= 0)
 		{
 			//look for a two word (you <something> me) pattern
 			int psn = findKeyword(statement, "you", 0);
@@ -84,6 +84,22 @@ public class Magpie2
 			if(psn >= 0 && findKeyword(statement, "me", psn) >= 0)
 			{
 				response = transformYouMeStatement(statement);
+			}
+			
+			else
+			{
+				response = getRandomResponse();
+			}
+		}
+		
+		else
+		{
+			//look for a two word (you <something> me) pattern
+			int psn = findKeyword(statement, "I", 0);
+			
+			if(psn >= 0 && findKeyword(statement, "you", psn) >= 0)
+			{
+				response = transformIYouStatement(statement);
 			}
 			
 			else
@@ -125,6 +141,23 @@ public class Magpie2
 		String restOfStatement = statement.substring(psnOfYou + 3, psnOfMe);
 		
 		return "What makes you think that I" + restOfStatement + "you?";
+	}
+	
+	private String transformIYouStatement(String statement)
+	{
+		statement.trim().toLowerCase();
+		String lastchar = statement.substring(statement.length() - 1);
+		
+		if(lastchar.compareTo(".") == 0)
+		{
+			statement = statement.substring(0, statement.length());
+		}
+		
+		int psnOfI = findKeyword(statement, "I");
+		int psnOfYou = findKeyword(statement, "you", psnOfI + 2);
+		String restOfStatement = statement.substring(psnOfI + 2, psnOfYou);
+		
+		return "Why do you " + restOfStatement + "me?";
 	}
 	
 	/** Ex_02: The findKeyword() Method...
